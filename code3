@@ -1,0 +1,28 @@
+//Definição de váriaveis e matrizes
+int ledpins[] = {2,3,4,5,6,7,8,9};
+int delaytime = 100;
+
+
+void setup(){
+  for(int index = 0; index <= 7; index++){
+    pinMode(ledpins[index], OUTPUT);
+  }
+}
+
+void loop(){
+  oneAfterAnotherLoop();
+}
+
+void oneAfterAnotherLoop(){
+  //Acende os leds
+  for(int index = 0; index <=7; index++){
+    digitalWrite(ledpins[index], HIGH);
+    delay(delaytime);
+  }
+
+  //Apaga os leds
+  for(int index =7; index >=0; index--){
+    digitalWrite(ledpins[index], LOW);
+    delay(delaytime);
+  }
+}
